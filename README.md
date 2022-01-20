@@ -4,6 +4,9 @@ basic on next.js , but disable ssr.(maybe will enable it on future)
 
 ## Coding Guide
 
+Airbnb
+
+
 ## Typescript
 
 ### use protobuf types

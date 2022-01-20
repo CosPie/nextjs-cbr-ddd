@@ -6,7 +6,9 @@
     "airbnb/hooks"
   ],
   "rules": {
+    "import/no-default-export": ["error"],
     "import/no-anonymous-default-export": ["off"],
+    "react/jsx-props-no-spreading": ["off"],
     "max-lines": "error",
     "max-lines-per-function": ["error", { "max": 80 }],
     "max-depth": ["error", { "max": 4 }],
