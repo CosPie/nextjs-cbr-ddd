@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/core/*": ["core/*"],
+      "@/domain/*": ["domain/*"],
+      "@/features/*": ["features/*"],
+      "@/shared/*": ["shared/*"]
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -15,7 +22,8 @@
     "jsx": "preserve",
     "incremental": true,
     "experimentalDecorators": true,
-    "useDefineForClassFields": true
+    "useDefineForClassFields": true,
+    "plugins": [{ "transform": "ts-transformer-keys/transformer" }]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.config.js"],
   "exclude": ["node_modules"]

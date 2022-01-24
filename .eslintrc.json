@@ -6,17 +6,18 @@
     "airbnb/hooks"
   ],
   "rules": {
-    "import/no-default-export": ["error"],
-    "import/no-anonymous-default-export": ["off"],
-    "react/jsx-props-no-spreading": ["off"],
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "error",
+    "import/no-anonymous-default-export": "off",
+    "react/jsx-props-no-spreading": "off",
     "max-lines": "error",
     "max-lines-per-function": ["error", { "max": 80 }],
     "max-depth": ["error", { "max": 4 }],
-    "max-params": ["error"],
-    "react/react-in-jsx-scope": ["off"],
-    "arrow-body-style": ["off"],
+    "max-params": ["error", { "max": 3 }],
+    "react/react-in-jsx-scope": "off",
+    "arrow-body-style": "off",
     "prefer-const": "error",
-    "sort-imports": "error",
+    "sort-imports": "off",
     "no-magic-numbers": "error",
     "require-await": "error",
     "max-len": "error",
@@ -31,5 +32,14 @@
   },
   "parserOptions": {
     "project": "./tsconfig.json"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["pages/**", "pages/api/**"],
+      "rules": {
+        "import/no-default-export": "off",
+        "import/prefer-default-export": "error"
+      }
+    }
+  ]
 }
