@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const withAntdLess = require('next-plugin-antd-less');
 
 module.exports = {
@@ -10,15 +11,9 @@ module.exports = {
     lessVarsFilePathAppendToEndOfContent: false, // optional
     // optional https://github.com/webpack-contrib/css-loader#object
     cssLoaderOptions: {
-      // ...
       mode: 'local',
-
       exportLocalsConvention: 'camelCase',
       exportOnlyLocals: false,
-      // ...
-      getLocalIdent: (context, localIdentName, localName, options) => {
-        return 'whatever_random_class_name';
-      },
     },
 
     // for Next.js ONLY
