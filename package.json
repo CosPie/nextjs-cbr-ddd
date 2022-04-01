@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@lit-labs/react": "^1.0.2",
+    "@react-three/fiber": "^8.0.6",
     "ahooks": "^3.2.0",
     "axios": "^0.26.1",
     "immer": "^9.0.12",
@@ -24,7 +25,9 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-intl": "^5.24.3",
-    "rxjs": "^7.5.5"
+    "react-spring": "^9.4.4",
+    "rxjs": "^7.5.5",
+    "three": "^0.139.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
