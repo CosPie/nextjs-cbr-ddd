@@ -4,7 +4,7 @@ const withAntdLess = require('next-plugin-antd-less');
 
 module.exports = {
   reactStrictMode: true,
-  basePath: process.env.NODE_ENV !== 'production' ? '/rider-meta' : '',
+  basePath: process.env.NODE_ENV !== 'production' ? '' : '/rider_meta',
   ...withAntdLess({
     modifyVars: { '@primary-color': '#04f' }, // optional
     lessVarsFilePath: './src/styles/variables.less', // optional

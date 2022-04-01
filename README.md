@@ -1,7 +1,29 @@
 ## Rider Meta
 basic on next.js , but disable ssr. (maybe will enable it on future)
 
+
+## Stack
+[x] next.js
+[x] typescript
+[x] mobx
+[x] jest
+[x] mock service worker
+[x] lit (web-components)
+[x] axios
+[x] rxjs
+[] upgrade to react18
+[] react-three-fiber
+[] storybook + msw-storybook-addon
+[] cypress (e2e test)
+
+
 ## Getting Started
+required node version >= 12.0.0 , recommend v16.14.2.
+> tips: use `nvm` to manage and switch multi node version.
+
+```
+nvm install node v16.14.2
+```
 
 run the development server:
 
@@ -35,24 +57,54 @@ Domain 目录
 
 ```
 
-Features 组件目录
+Features 公共的业务组件目录
 ```
 ├── Xcomponent
-│    ├── Xcomponent.tsx                         // 组件视图，只写视图及视图相关逻辑，任何计算、转换数据在repository或者store中进行
-│    ├── Xcomponent.module.less                         // 组件样式
-     └── Xcomponent.store.ts (optional)                      // 组件自身状态层，可选
+│    ├── Xcomponent.tsx                         // main view (组件视图，只写视图及视图相关逻辑，任何计算、转换数据在repository或者store中进行)
+│    ├── Xcomponent.module.less                         // css style (样式)
+│    ├── Xcomponent.d.ts                         // component type props definition (ts类型)
+│    ├── Xcomponent.util.ts (optional)                        // complex component process (复杂组件逻辑处理)
+│    ├── Xcomponent.config.ts (optional)                        // constant config （常量配置）
+│    ├── Xcomponent.stories.tsx (optional)                        // storybook file for ui test （ui 组件化测试构建）
+│    ├── Xcomponent.test.tsx (optional)                        // jest unit test （单元测试）
+│    └── Xcomponent.store.ts (optional)                      // manage component store (组件自身状态层，可选)
 
 ```
 
-Pages 目录直接对应路由文件，遵守next.js官方文档规则
+Pages 目录
+直接对应路由文件，遵守next.js官方文档规则
+```
+// TODO
+```
 
-Shared 全项目可通用的逻辑存放，如工具函数等。
+
+Shared 目录
+存放全项目可通用的基础逻辑存放，如工具函数等。 与Features的不同点是，Shared目录存放的不是业务类型，而是基础类型，更多通用性。
+```
+// TODO
+├── components
+
+```
+
+Scripts 目录
+建议使用 zx(https://www.npmjs.com/package/zx) , 可以使用 js 编写bash语言。
+```
+zx xxxx.mjs
+```
+
+## 总结
+1. 每个Page一般由多个Features构成，每个features应作为对应域的View层。
+2.
+
 
 ## Coding Guide
-
-base Airbnb, https://github.com/airbnb/javascript
+base Airbnb, https://github.com/airbnb/javascript ， 使用eslint配置，请确保eslint & prettier 的正确安装。
 
 ### use protobuf types
+use pbjs to generate relative d.ts.
+
+
+
 <!-- TODO -->
 ### Domain
 - animation

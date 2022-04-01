@@ -2,6 +2,10 @@ import '../styles/globals.css';
 import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 
+if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
+  require('../mocks/index')
+}
+
 const App = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />;
 };
