@@ -1,29 +1,57 @@
 ## Rider Meta
-basic on next.js , but disable ssr. (maybe will enable it on future)
+basic on next.js , but disable ssr. (serve as static html)
 
 
 ## Stack
-[x] next.js
-[x] typescript
-[x] mobx
-[x] jest
-[x] mock service worker
-[x] lit (web-components)
-[x] axios
-[x] rxjs
-[] upgrade to react18
-[] react-three-fiber
-[] storybook + msw-storybook-addon
-[] cypress (e2e test)
+- [x] next.js
+
+- [x] typescript
+- [x] mobx
+- [x] jest
+- [x] mock service worker
+- [x] lit (web-components)
+- [x] axios
+- [x] rxjs
+- [ ] upgrade to react18
+- [x] react-three-fiber
+- [x] storybook + msw-storybook-addon
+- [ ] cypress (e2e test)
 
 
 ## Getting Started
 required node version >= 12.0.0 , recommend v16.14.2.
-> tips: use `nvm` to manage and switch multi node version.
+> tips: use `nvm` to easily manage and switch between multi node version.
 
-```
+```bash
 nvm install node v16.14.2
 ```
+
+### Config
+
+create `.env.local` to apply personal local config.
+
+```bash
+touch .env.local
+```
+
+`.env.local`
+
+```
+HOSTNAME=localhost # or ip
+```
+
+### Environment
+
+-`.env `, loaded for all environment
+
+-`.env.local`, loaded for local , (will ignore in git)
+
+-`.env.development`, loaded for common development.
+
+-`.env.production`, loaded for production.
+
+
+### Development
 
 run the development server:
 
@@ -40,8 +68,10 @@ yarn build
 run the build command , will generate to `./out` folder.
 
 ## Architecture
-Inspired by https://phodal.github.io/clean-frontend/
-Example: https://github.dev/phodal/clean-frontend/blob/master/src/app/domain/elephant/model/elephant.entity.ts
+
+> Inspired by https://phodal.github.io/clean-frontend/
+
+> [Example](https://github.dev/phodal/clean-frontend/blob/master/src/app/domain/elephant/model/elephant.entity.ts)
 
 
 Domain 目录
@@ -51,7 +81,7 @@ Domain 目录
 │    ├── elephant.model.ts                         // 核心业务模型
      └── elephant.mapper.ts                      // 映射层，用于核心实体层映射，或映射到核心实体层。即进行模型转换
 ├── repository
-    └── elephant.repository.ts                  // Repository，用于读取和存储数据。
+    └── elephant.repository.ts                  // Repository，用于读取和存储数据，如网络请求、LocalStorage等。
 ├── store
     └── elephant.store.ts                         // 状态管理
 
@@ -87,14 +117,14 @@ Shared 目录
 ```
 
 Scripts 目录
-建议使用 zx(https://www.npmjs.com/package/zx) , 可以使用 js 编写bash语言。
+建议使用 zx(https://www.npmjs.com/package/zx) , 可以使用 js 编写bash脚本。
 ```
 zx xxxx.mjs
 ```
 
 ## 总结
 1. 每个Page一般由多个Features构成，每个features应作为对应域的View层。
-2.
+2. 每个域有自身的数据上下文边界，如果域有交集，则单独抽成新的Bridge域
 
 
 ## Coding Guide

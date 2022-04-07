@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import { MyButtonElement } from '@/shared/web-components';
 import styles from './index.module.less';
+import RoadScene from './scene';
 
 const Home: NextPage = () => {
   return (
@@ -30,6 +30,8 @@ const Home: NextPage = () => {
       >
         react
       </button>
+
+      <RoadScene></RoadScene>
     </div>
   );
 };
